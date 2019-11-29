@@ -1,12 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>drop-down</title>
-</head>
-<body>
+  <title>Document</title>
+  <style>
+    #tri {
+      /* formatting model:position / offsets / z-index / display/ ...*/
+      /* box model:sizes / margins / paddings / borders / ... */ 
+      width: 0;
+      height: 0;
+      margin-left: 80%;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      border-top: 5px solid transparent;
+      border-bottom: 8px solid #F65040;
+      /* typographic: font / aligns / text styles / ... */
+      /* visual:colors / shadows / gradients / ... */
+    }
+    #tri-down {
+      /* formatting model:position / offsets / z-index / display/ ...*/
+      /* box model:sizes / margins / paddings / borders / ... */ 
+      width: 0;
+      height: 0;
+      margin-left: 29.8%;
+      
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      border-top: 8px solid white;
+      border-bottom: 5px solid transparent;
+      /* typographic: font / aligns / text styles / ... */
+      /* visual:colors / shadows / gradients / ... */
+    }
   
+    .nav {
+      position: relative;
+      left: 50%;
+
+      width: 250px;
+
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      
+    }
+
+    .nav ul,
+    .nav li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .nav a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav>ul>li>ul {
+     display: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 15px;
+    }
+
+    .nav>ul>li:hover>ul {
+      display: block;
+    }
+
+    .nav>ul>li>a {
+      display: flex;
+      padding: 10px 20px;
+
+      text-align: justify;
+
+      background-color: #F65040;
+      border-radius: 10px;
+    }
+    .nav>ul>li>ul>li>a {
+      display: inline-block;
+      padding: 10px;
+      
+
+      text-align:justify;
+    }
+    #li-1 {
+      
+      width: 250px;
+      display: flex;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom: 1px solid #FF7D6C;
+
+      text-align: left;
+
+      background: #F65040;
+    }
+    #li-1-bg {
+      
+      display: inline-block;
+      width: 44px;
+      height: 38px;
+      
+      background:no-repeat -33px 6px/264% auto  url(./icons.png);
+
+    }
+    #li-2 {
+      
+      width: 250px;
+      display: flex;
+      border-bottom: 1px solid #FF7D6C;
+
+
+      text-align: left;
+
+      background: #F65040;
+    }
+    #li-2-bg {
+      
+      display: inline-block;
+      width: 44px;
+      height: 38px;
+      
+      background:no-repeat 17px -31px/264% auto  url(./icons.png);
+
+    }
+    #li-3 {
+      display: flex;
+      width: 250px;
+      
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      
+      background: #F65040;
+    }
+    #li-3-bg {
+      
+      display: inline-block;
+      width: 44px;
+      height: 38px;
+      
+      background:no-repeat 18px 6px/264% auto  url(./icons.png);
+
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="nav">
+    <ul class>
+      <li><a href="#">Saint Petersburg<span id="tri-down"></span></a>
+        <ul>
+          <li><div id="tri"></div> </li>
+          <li id="li-1"><span id="li-1-bg"></span><a href="#">Like</a></li>
+          <li id="li-2"><span id="li-2-bg"></span><a href="#">Favourites</a></li>
+          <li id="li-3"><span id="li-3-bg"></span><a href="#">Discuss</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+
 </body>
+
 </html>
